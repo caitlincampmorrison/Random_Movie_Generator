@@ -1,0 +1,33 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+#app {
+  align-items: center;
+  justify-content: center;
+}
+p {
+  text-align: center;
+}
+#generator_button {
+  padding: 20px;
+}
+.movie-item {
+  display: flex;
+  align-self: center;
+}
+.movie-item button{
+  display: inline-flex;
+  height: 20px;
+  align-self: center;
+  margin-right: 10px;
+}
+.movie-item p {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+#generator_button {
+  display: flex;
+  flex-basis: 100%;
+}
