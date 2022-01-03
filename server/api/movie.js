@@ -12,7 +12,6 @@ app.get('/', async(req,res,next) => {
 })
 
 app.post('/', async(req,res,next) => {
-    console.log("IN THE ADD")
     try{
         const data = await Movie.create({title: req.body.title, stars: 2})
         res.send(data)
@@ -23,7 +22,6 @@ app.post('/', async(req,res,next) => {
 })
 
 app.delete('/:id', async(req,res,next) => {
-    console.log('test ' + req.params)
     try{
         const data = await Movie.destroy({
             where: {id: req.params.id}
@@ -37,12 +35,10 @@ app.delete('/:id', async(req,res,next) => {
 })
 
 app.put('/:id', async(req,res,next) => {
-    console.log("PUT " + req.body.stars)
-    console.log("PUT ID : " + req.params.id)
     try{
         const data = await Movie.update(
             {stars: req.body.stars},
-            {where: req.params.id}
+            {where: {id: req.params.id}}
         )
     }
     catch(ex){
